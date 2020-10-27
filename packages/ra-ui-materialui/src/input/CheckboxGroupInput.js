@@ -167,6 +167,7 @@ export class CheckboxGroupInput extends Component {
             resource,
             source,
             input,
+            row = true,
             ...rest
         } = this.props;
         if (typeof meta === 'undefined') {
@@ -192,7 +193,7 @@ export class CheckboxGroupInput extends Component {
                         isRequired={isRequired}
                     />
                 </FormLabel>
-                <FormGroup row>{choices.map(this.renderCheckbox)}</FormGroup>
+                <FormGroup row={row}>{choices.map(this.renderCheckbox)}</FormGroup>
                 {touched && error && (
                     <FormHelperText error>{error}</FormHelperText>
                 )}
